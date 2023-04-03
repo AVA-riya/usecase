@@ -23,8 +23,12 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
     - name: Build and push Docker image
       run: docker push ${{ secrets.DOCKER_USERNAME }}/image
+    - name: container
+       container:
+         image: myimage
+         options: '-e MY_VAR=myvalue -p 8080:80'
     - name: executing remote ssh commands using password
-      uses: appleboy/ssh-action@master
+      uses: appleboy/ssh-action@masterjob
       with:
         host: ${{ secrets.SSH_HOST }}
         username: ${{ secrets.SSH_USERNAME }}
