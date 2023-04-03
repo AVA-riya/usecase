@@ -27,7 +27,7 @@ jobs:
       run: |
         docker run \
            -e MY_VAR=myvalue \
-           -p 8080:80 \
+           -p 8080:3000 \
            ${{ secrets.DOCKER_USERNAME }}/image
 
     - name: executing remote ssh commands using password
