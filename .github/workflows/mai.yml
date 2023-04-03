@@ -29,6 +29,7 @@ jobs:
         password: ${{ secrets.SSH_PASSWORD }}
         port: ${{ secrets.SSH_PORT }}
         script: |
+          sudo docker rm -f image
           sudo docker rmi -f padmapriya06/image
           sudo docker pull padmapriya06/image:latest
           sudo docker run --name front -p 80:3000 padmapriya06/image:latest
