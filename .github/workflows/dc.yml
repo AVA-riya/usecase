@@ -18,11 +18,11 @@ jobs:
       with:
         context: .
         push: true
-        tags: myusername/myimage:latest
+        tags: padmapriya06/image
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Run Docker image in container
       run: |
-        docker run -d -p 80:80 myusername/myimage:latest
+        docker run -d -p 80:80 padmapriya06/image
