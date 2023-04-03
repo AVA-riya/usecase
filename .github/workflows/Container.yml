@@ -21,11 +21,11 @@ jobs:
       - name: Build and push Docker image
         run: docker push ${{ secrets.DOCKER_USERNAME }}/image
       - name: Run the container
-         container:
-           image: ${{ secrets.DOCKER_USERNAME }}/image
-           options: '-e MY_VAR=myvalue -p 8080:80'
+        with:
+          image: ${{ secrets.DOCKER_USERNAME }}/image
+          options: '-e MY_VAR=myvalue -p 8080:80'
       - name: Execute remote SSH commands using password
-        uses: appleboy/ssh-action@masterjob
+        uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
