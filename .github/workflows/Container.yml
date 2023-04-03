@@ -1,4 +1,4 @@
-name: Docker cont
+name: Docker 
 
 on:
   push:
