@@ -32,4 +32,4 @@ jobs:
           sudo docker rm -f front
           sudo docker rmi -f padmapriya06/image
           sudo docker pull padmapriya06/image:latest
-          sudo docker run --name front -p 80:3000 padmapriya06/image:latest
+          sudo docker run --name front -p 8080:3000 padmapriya06/image:latest
