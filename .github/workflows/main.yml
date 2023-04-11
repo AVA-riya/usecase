@@ -30,6 +30,6 @@ jobs:
         port: ${{ secrets.SSH_PORT }}
         script: |
           sudo docker rm -f front
-          sudo docker rmi -f padmapriya06/image
-          sudo docker pull padmapriya06/image:latest
-          sudo docker run --name front -p 8080:3000 -d padmapriya06/image:latest
+          sudo docker rmi -f ${{ secrets.DOCKER_USERNAME }}/image
+          sudo docker pull ${{ secrets.DOCKER_USERNAME }}/image:latest
+          sudo docker run --name front -p 8080:3000 -d ${{ secrets.DOCKER_USERNAME }}/image:latest
